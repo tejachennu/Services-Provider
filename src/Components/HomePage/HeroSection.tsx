@@ -23,6 +23,33 @@ const HeroSection: React.FC = () => {
     }
   };
 
+  const slideImages = [
+    {
+      image : "/video.jpg",
+      title : "Proffesional Video Editing Services ",
+      description : " Capturing Your Moments with Perfection",
+      link : " "
+    },
+    {
+      image : "/video.jpg",
+      title : "Proffesional Video Editing Services ",
+      description : " Capturing Your Moments with Perfection",
+      link : " "
+    },
+    {
+      image : "/video.jpg",
+      title : "Proffesional Video Editing Services ",
+      description : " Capturing Your Moments with Perfection",
+      link : " "
+    },
+    {
+      image : "/video.jpg",
+      title : "Proffesional Video Editing Services ",
+      description : " Capturing Your Moments with Perfection",
+      link : " "
+    },
+  ]
+
   return (
     <div className="relative max-w-screen-2xl max-sm:h-[40vh]  mx-auto">
       <Swiper
@@ -38,7 +65,32 @@ const HeroSection: React.FC = () => {
           disableOnInteraction: false,
         }}
       >
-        <SwiperSlide>
+        {slideImages.map((side,index)=>(
+          <SwiperSlide>
+          <div className="relative" key={index}>
+            <img
+              src={side.image}
+              className="object-cover w-full max-sm:h-[40vh]"
+            />
+            <div className="absolute inset-0 flex items-center justify-start bg-black bg-opacity-20 ">
+              <section className="flex flex-col justify-center m-4 lg:ml-36">
+                <h1 className="mb-4 text-2xl max-md:mt-4 md:w-[50%] font-bold text-left text-white transition-opacity duration-1000 transform md:text-5xl lg:text-7xl">
+                {side.title}
+                </h1>
+                <p className="text-white pl-2 md:mb-6 max-sm:text-sm md:w-[50%] animate-fade-up">
+                  {side.description}
+                </p>
+                
+            <Link to={side.link} className="px-3 py-2 pl-2 mt-1 mr-3 text-white bg-orange-600 w-fit">
+              Try Now for free !
+            </Link>
+            
+              </section>
+            </div>
+          </div>
+        </SwiperSlide>
+        ))}
+        {/* <SwiperSlide>
           <div className="relative">
             <img
               src="/video.jpg"
@@ -129,7 +181,7 @@ const HeroSection: React.FC = () => {
               </section>
             </div>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
         {/* <SwiperSlide>
           <div className="relative">
             <img
